@@ -12,6 +12,7 @@ const io = sio.listen(httpServer, {
   pingTimeout: 5000,
 });
 
+app.set('ip', (process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'));
 app.set('port', (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000));
 app.set('views', path.join(__dirname, '/assets/views'));
 app.engine('html', require('ejs').renderFile);
@@ -21,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-httpServer.listen(app.get('port'), () => {
+httpServer.listen(app.get('port'), app.get('ip'), () => {
   const msgStr = 'Angular Full Stack listening on port ' + app.get('port');
   console.log(msgStr);
 });
