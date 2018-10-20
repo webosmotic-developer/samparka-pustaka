@@ -2,6 +2,7 @@
   "name": "samparka-pustaka",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "dist/server/app.js",
   "scripts": {
     "ng": "ng",
     "start": "node dist/server/app.js",
@@ -12,7 +13,7 @@
     "predev": "tsc -p server",
     "dev": "concurrently \"ng serve -pc proxy.conf.json --open\" \"ncp server/assets/ dist/server/assets/\" \"tsc -w -p server\" \"nodemon dist/server/app.js\"",
     "prod": "concurrently \"ng build -aot -prod && tsc -p server && ncp server/assets/ dist/server/assets/ && node dist/server/app.js\"",
-    "build:prod": "concurrently \"ng build -aot -prod && tsc -p server\"",
+    "build:prod": "concurrently \"ng build -aot -prod && tsc -p server && ncp server/assets/ dist/server/assets/\"",
     "preinstall": "npm install -g @angular/cli && npm install -g typescript",
     "postinstall": "npm run build:prod"
   },

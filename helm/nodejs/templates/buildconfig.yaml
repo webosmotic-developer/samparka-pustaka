@@ -34,5 +34,3 @@ spec:
   - type: Generic
     generic:
       secret: {{ .Values.generic_webhook_secret | default (randAlphaNum 40) | quote }}
-  postCommit:
-    script: npm test
