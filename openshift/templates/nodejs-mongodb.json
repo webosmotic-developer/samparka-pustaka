@@ -436,14 +436,14 @@
       "name": "NODEJS_VERSION",
       "displayName": "Version of NodeJS Image",
       "description": "Version of NodeJS image to be used (6, 8, or latest).",
-      "value": "8",
+      "value": "latest",
       "required": true
     },
     {
       "name": "MONGODB_VERSION",
       "displayName": "Version of MongoDB Image",
       "description": "Version of MongoDB image to be used (3.6 or latest).",
-      "value": "3.6",
+      "value": "latest",
       "required": true
     },
     {
